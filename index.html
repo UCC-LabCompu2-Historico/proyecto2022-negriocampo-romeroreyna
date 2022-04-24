@@ -6,21 +6,45 @@
     <style>
         body{
             text-align: center;
-            background: linear-gradient(to right,saddlebrown,sandybrown);
+            background: #592913;
         }
         #escueladearqueria{
             font-size: 60px;
+            margin-top: 60px;
+        }
+        #nombre{
+            margin-top: 150px;
+            font-size: x-large;
+        }
+        #experiencia {
+            margin-right: 500px;
+            margin-top: 75px;
+            font-size: xx-large;
+        }
+        button{
+            margin-top: 100px;
+            margin-right: 150px;
+            margin-left: 150px;
+            font-size: large;
+        }
+        text{
+            font-size: large;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 id="escueladearqueria">ESCUELA DE ARQUERIA</h1>
-    </header>
+<header>
+    <h1 id="escueladearqueria">ESCUELA DE ARQUERIA</h1>
+</header>
 
-
+<div id="nombre">
+    <h2 id="name" class="arquero">Ingrese su nombre, Arquero!</h2>
+    <label for="asknombre"> </label>
+    <input type="text" name="nombre" placeholder="Nombre" id="asknombre">
+</div>
 <div>
-    <h2>Ingrese su nombre, Arquero!</h2>
+    <h2 id="experiencia" class="arquero">Cual es su nivel de experiencia?</h2>
+    <button> Principiante </button> <button> Experto </button>
 </div>
 </body>
 </html>
