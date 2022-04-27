@@ -1,0 +1,48 @@
+
+body{
+    text-align: center;
+    background: url("resources/medievalbackground.jpg");
+    background-color: white;
+    background-size: cover;
+}
+#escueladearqueria{
+    font-size: 60px;
+    margin-top: 60px;
+}
+#nombre{
+    margin-top: 100px;
+    font-size: x-large;
+    background: url("resources/woodtext.jpg");
+    background-color: saddlebrown;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    border-width: 6px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+#experiencia {
+    margin-right: 500px;
+    margin-top: 75px;
+    font-size: xx-large;
+}
+button{
+    margin-top: 100px;
+    margin-right: 150px;
+    margin-left: 150px;
+    font-size: large;
+}
+text{
+    font-size: large;
+}
+#escuela{
+    color: black;
+    background: url("");
+    border-style: solid;
+    border-color: black;
+    border-width: 6px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 200px;
+    margin-left: 200px;
+}

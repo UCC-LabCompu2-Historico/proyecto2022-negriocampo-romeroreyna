@@ -3,44 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Tiro con Arco</title>
-    <style>
-        body{
-            text-align: center;
-            background: url("resources/medback.jpg");
-            background-size: cover;
-        }
-        #escueladearqueria{
-            font-size: 60px;
-            margin-top: 60px;
-        }
-        #nombre{
-            margin-top: 150px;
-            font-size: x-large;
-        }
-        #experiencia {
-            margin-right: 500px;
-            margin-top: 75px;
-            font-size: xx-large;
-        }
-        button{
-            margin-top: 100px;
-            margin-right: 150px;
-            margin-left: 150px;
-            font-size: large;
-        }
-        text{
-            font-size: large;
-        }
-        .cartel{
-            color: black;
-            background: white;
-
-        }
-    </style>
+    <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-
-<div class="cartel">
+<div id="escuela" class="cartel">
 <header>
     <h1 id="escueladearqueria">ESCUELA DE ARQUERIA</h1>
 </header>
@@ -49,10 +15,11 @@
     <h2 id="name" class="arquero">Ingrese su nombre, Arquero!</h2>
     <label for="asknombre"> </label>
     <input type="text" name="nombre" placeholder="Nombre" id="asknombre">
+    <br>  </br>
 </div>
 <div>
     <h2 id="experiencia" class="arquero">Cual es su nivel de experiencia?</h2>
-    <button> Principiante </button> <button> Experto </button>
+    <button type="button" onclick="">  Principiante </button> <button> Experto </button>
 </div>
 </body>
 </html>
