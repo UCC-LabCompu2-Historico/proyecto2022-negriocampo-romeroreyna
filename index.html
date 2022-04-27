@@ -6,7 +6,8 @@
     <style>
         body{
             text-align: center;
-            background: #592913;
+            background: url("resources/medback.jpg");
+            background-size: cover;
         }
         #escueladearqueria{
             font-size: 60px;
@@ -30,14 +31,21 @@
         text{
             font-size: large;
         }
+        .cartel{
+            color: black;
+            background: white;
+
+        }
     </style>
 </head>
 <body>
+
+<div class="cartel">
 <header>
     <h1 id="escueladearqueria">ESCUELA DE ARQUERIA</h1>
 </header>
-
-<div id="nombre">
+</div>
+<div id="nombre" class="cartel">
     <h2 id="name" class="arquero">Ingrese su nombre, Arquero!</h2>
     <label for="asknombre"> </label>
     <input type="text" name="nombre" placeholder="Nombre" id="asknombre">
