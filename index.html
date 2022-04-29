@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <title>Tiro con Arco</title>
     <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="escuela" class="cartel">
-<header>
-    <h1 id="escueladearqueria">ESCUELA DE ARQUERIA</h1>
-</header>
+    <header>
+        <h1 id="escueladearqueria">ESCUELA DE ARQUERIA</h1>
+    </header>
 </div>
 <div id="nombre" class="cartel">
     <h2 id="name" class="arquero">Ingrese su nombre, Arquero!</h2>
     <label for="asknombre"> </label>
-    <input type="text" name="nombre" placeholder="Nombre" id="asknombre">
-    <br>  </br>
+    <input type="text" name="text" class="input" id="asknombre" placeholder="Ingrese su nombre">
+    <br> </br>
 </div>
 <div>
     <h2 id="experiencia" class="arquero">Cual es su nivel de experiencia?</h2>
-    <button type="button" onclick="">  Principiante </button> <button> Experto </button>
+    <button id="principiante" onclick=""><span></span>Principiante</button>
+    <button id="experto" onclick=""""><span></span>Experto</button>
 </div>
 </body>
 </html>
