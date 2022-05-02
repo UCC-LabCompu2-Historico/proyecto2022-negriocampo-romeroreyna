@@ -8,10 +8,14 @@
     <meta content="principal, inicio" name="keywords">
 
     <title>Tiro con Arco</title>
+
     <link href="style.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <script src="botones-js/principiante.js"></script>
+    <script src="botones-js/experto.js"></script>
+
 </head>
 <body>
 <div id="escuela" class="cartel">
@@ -30,11 +34,6 @@
     <h2 id="experiencia">Cual es su nivel de experiencia?</h2>
     <button id="principiante" class="exp" onclick="comojugar()"><span></span>Principiante</button>
     <button id="experto" class="exp" onclick="jugar()"><span></span>Experto</button>
-    <script>
-        function comojugar() {
-            location.href = "comojugar.html";
-        }
-    </script>
 </div>
 </body>
 </html>

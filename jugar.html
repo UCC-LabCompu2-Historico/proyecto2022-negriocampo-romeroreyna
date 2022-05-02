@@ -8,17 +8,23 @@
     <meta content="juego" name="keywords">
 
     <title>Juego</title>
+
     <link href="style.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-</head>
-<body>
-<header class="info">
-    <h1>¡A PRACTICAR!</h1>
-</header>
+    <script src="botones-js/volver.js"></script>
 
-<button id="volver2" class="volver"><span></span>Volver</button>
+</head>
+
+<body>
+<div>
+    <header class="info">
+        <h1>¡A PRACTICAR!</h1>
+    </header>
+</div>
+
+<button id="volver2" class="volver" onclick="volver()"><span></span>Volver</button>
 
 <div class="info">
     <p>Ingrese los datos de su tiro:</p>
@@ -31,7 +37,7 @@
     <button type="submit" id="play"><span></span>¡Tirar!</button>
 </div>
 <div>
-    <canvas id="canvastiro" width="1200" height="500" ></canvas>
+    <canvas id="canvastiro" width="1200" height="500"></canvas>
 </div>
 </body>
 </html>
