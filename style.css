@@ -28,10 +28,19 @@ body {
     margin-right: 500px;
     margin-top: 75px;
     font-size: xx-large;
-    color: black;
+    color: rgba(210, 178, 122);
+    text-shadow: 4px 4px 2px black;
 }
 
-.exp{
+#arco{
+    position:absolute;
+    width:100px;
+    height:100px;
+    top:50px;
+    left:400px;
+}
+
+.exp {
     margin-top: 100px;
     margin-right: 150px;
     margin-left: 150px;
@@ -71,7 +80,8 @@ button {
 #principiante::before {
     content: "Principiante";
 }
-button::before{
+
+button::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -94,7 +104,8 @@ button::before{
 #principiante::after {
     content: "Principiante";
 }
-button::after{
+
+button::after {
     position: absolute;
     top: 0;
     left: -100%;
@@ -215,9 +226,9 @@ button::after{
     background: transparent;
     margin-top: 5px;
     margin-left: 5px;
-    position:absolute;
-    top:0;
-    left:0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .volver::before {
@@ -302,7 +313,7 @@ button::after{
 }
 
 #listo::after {
-    content:"Si, estoy listo!";
+    content: "Si, estoy listo!";
     /*position: absolute;*/
     /*top: 0;*/
     /*left: -100%;*/
@@ -324,11 +335,11 @@ button::after{
     opacity: 1;
 }
 
-#play::before{
+#play::before {
     content: "¡Tirar!";
 }
 
-#play::after{
+#play::after {
     content: "¡Tirar!";
 }
 
@@ -344,7 +355,7 @@ button::after{
     opacity: 1;
 }
 
-.info{
+.info {
     font-size: x-large;
     background-color: rgba(210, 178, 122, .5);
     border-style: inset hidden outset hidden;
@@ -355,11 +366,11 @@ button::after{
     margin-right: 350px;
 }
 
-#comoju{
+#comoju {
     color: white;
 }
 
-#arquero{
+#arquero {
     width: 200px;
     position: absolute;
     bottom: 0;
@@ -401,7 +412,7 @@ button::after{
     color: rgba(210, 178, 122, .8);
 }
 
-canvas{
+canvas {
     margin-top: 10px;
     border: 1px solid black;
     background-color: white;
