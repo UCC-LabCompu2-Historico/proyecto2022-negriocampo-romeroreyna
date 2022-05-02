@@ -9,7 +9,7 @@ body {
 
 #escueladearqueria {
     font-size: 60px;
-    margin-top: 60px
+    margin-top: 60px;
 }
 
 #nombre {
@@ -33,11 +33,14 @@ body {
 }
 
 #arco{
-    position: fixed;
-    width:100px;
-    height:100px;
-    top:50px;
-    left:400px;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 15%;
+    top: 3%;
+    /*top:50px;*/
+    /*left:400px;*/
+
 }
 
 .exp {
