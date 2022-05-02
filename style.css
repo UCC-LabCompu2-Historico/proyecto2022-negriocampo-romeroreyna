@@ -2,7 +2,7 @@
 body {
     text-align: center;
     background: url("resources/wallpaper.jpg");
-    background-color: #D2B27ACC;
+    /*background-color: #D2B27ACC;*/
     background-size: cover;
     font-family: 'MedievalSharp', cursive;
 }
@@ -28,6 +28,7 @@ body {
     margin-right: 500px;
     margin-top: 75px;
     font-size: xx-large;
+    color: black;
 }
 
 .exp{
@@ -175,12 +176,12 @@ button::after{
 
 /* From uiverse.io by @Alaner-xs */
 .input {
-    background-color: #383838;
-    border: 1ex solid;
+    background-color: #D2B27ACC;
+    border: 1ex solid none;
     border-top-width: 1.7em;
     margin: 0;
     padding: 0;
-    color: #383838;
+    color: #D2B27ACC;
     word-wrap: break-word;
     outline: 7px solid #383838;
     height: 30px;
@@ -189,17 +190,17 @@ button::after{
     transition: all 1s;
     max-width: 190px;
     font-weight: bold;
-    font-family: 'MedievalSharp', cursive;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .input:hover {
     border-top-width: 0.2em;
-    background-color: rgba(210, 178, 122, .8);
+    background-color: #f1e8e8;
 }
 
 .input:focus {
     border-top-width: 0.2em;
-    background-color: rgba(210, 178, 122, .8);
+    background-color: #f1e8e8;
 }
 
 .volver {
@@ -216,7 +217,7 @@ button::after{
     margin-left: 5px;
     position:absolute;
     top:0;
-    left:0
+    left:0;
 }
 
 .volver::before {
@@ -323,7 +324,27 @@ button::after{
     opacity: 1;
 }
 
-.comojugar{
+#play::before{
+    content: "¡Tirar!";
+}
+
+#play::after{
+    content: "¡Tirar!";
+}
+
+#play:hover::before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+#play:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+}
+
+.info{
     font-size: x-large;
     background-color: rgba(210, 178, 122, .5);
     border-style: inset hidden outset hidden;
@@ -336,4 +357,52 @@ button::after{
 
 #comoju{
     color: white;
+}
+
+#arquero{
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+}
+
+/*#text{*/
+/*    width: 700px;*/
+/*    height: 200px;*/
+/*    position: absolute;*/
+/*    bottom: 250px;*/
+/*    left: 300px;*/
+/*    background-color: transparent;*/
+/*}*/
+
+/* From uiverse.io by @Cornerstone-04 */
+.datos {
+    max-width: 190px;
+    height: 30px;
+    border: 2px solid transparent;
+    outline: none;
+    border-bottom: 2px solid #3f3f3f;
+    caret-color: #3f3f3f;
+    background-color: #212121;
+    padding: 5px;
+    transition: .5s linear;
+    font-family: 'MedievalSharp', cursive;
+    letter-spacing: 1px;
+}
+
+.datos:focus {
+    border: 2px solid rgba(210, 178, 122, .8);
+    caret-color: rgba(210, 178, 122, .8);
+    color: rgba(210, 178, 122, .8);
+    box-shadow: 4px 4px 10px #070707;
+}
+
+.datos:focus::placeholder {
+    color: rgba(210, 178, 122, .8);
+}
+
+canvas{
+    margin-top: 10px;
+    border: 1px solid black;
+    background-color: white;
 }

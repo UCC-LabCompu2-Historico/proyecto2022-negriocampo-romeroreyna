@@ -9,19 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
+<header class="info">
     <h1>¡A PRACTICAR!</h1>
 </header>
-<div>
+<div class="info">
     <p>Ingrese los datos de su tiro:</p>
     <p>
-        <label for="angulo"></label> <label for="angulo"></label>
-        <input type="text" name="angulo" placeholder="angulo" id="angulo"> <input type="text" name="velocidad"
-                                                                                  placeholder="velocidad"
-                                                                                  id="velocidad">
+        <label for="angulo"></label>
+        <input type="text" name="angulo" placeholder="Ingrese el angulo" class="datos" id="angulo">
+        <label for="velocidad"></label>
+        <input type="text" name="velocidad" placeholder="Ingrese la velocidad" class="datos" id="velocidad">
     </p>
-    <button type="submit">¡Tirar!</button>
+    <button type="submit" id="play" class=""><span></span>¡Tirar!</button>
+</div>
+<div>
+    <canvas id="canvastiro" width="1200" height="500" ></canvas>
 </div>
 </body>
-</html>
 </html>
