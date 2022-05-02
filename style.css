@@ -2,7 +2,7 @@
 body {
     text-align: center;
     background: url("resources/wallpaper.jpg");
-    background-color: white;
+    background-color: #D2B27ACC;
     background-size: cover;
     font-family: 'MedievalSharp', cursive;
 }
@@ -30,7 +30,7 @@ body {
     font-size: xx-large;
 }
 
-button {
+.exp{
     margin-top: 100px;
     margin-right: 150px;
     margin-left: 150px;
@@ -54,7 +54,7 @@ text {
 }
 
 /* From uiverse.io by @Damithkumara */
-#principiante {
+button {
     padding: 0.9em 1.8em;
     text-transform: uppercase;
     text-decoration: none;
@@ -69,6 +69,8 @@ text {
 
 #principiante::before {
     content: "Principiante";
+}
+button::before{
     position: absolute;
     top: 0;
     left: 0;
@@ -90,6 +92,8 @@ text {
 
 #principiante::after {
     content: "Principiante";
+}
+button::after{
     position: absolute;
     top: 0;
     left: -100%;
@@ -111,32 +115,32 @@ text {
     opacity: 1;
 }
 
-#experto {
-    padding: 0.9em 1.8em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 4px;
-    color: transparent;
-    border: 3px solid rgba(210, 178, 122, .8);
-    font-size: 14px;
-    position: relative;
-    font-family: inherit;
-    background: transparent;
-}
+/*#experto {*/
+/*    padding: 0.9em 1.8em;*/
+/*    text-transform: uppercase;*/
+/*    text-decoration: none;*/
+/*    letter-spacing: 4px;*/
+/*    color: transparent;*/
+/*    border: 3px solid rgba(210, 178, 122, .8);*/
+/*    font-size: 14px;*/
+/*    position: relative;*/
+/*    font-family: inherit;*/
+/*    background: transparent;*/
+/*}*/
 
 #experto::before {
     content: "Experto";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #363636;
-    color: rgba(210, 178, 122, .8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: #363636;*/
+    /*color: rgba(210, 178, 122, .8);*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*transition: all 0.5s;*/
 }
 
 #experto:hover::before {
@@ -147,19 +151,19 @@ text {
 
 #experto::after {
     content: "Experto";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(210, 178, 122, .8);
-    color: #363636;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-    transform: scale(0) rotateY(0deg);
-    opacity: 0;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: -100%;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: rgba(210, 178, 122, .8);*/
+    /*color: #363636;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*transition: all 0.5s;*/
+    /*transform: scale(0) rotateY(0deg);*/
+    /*opacity: 0;*/
 }
 
 #experto:hover::after {
@@ -172,7 +176,7 @@ text {
 /* From uiverse.io by @Alaner-xs */
 .input {
     background-color: #383838;
-    border: 1ex solid none;
+    border: 1ex solid;
     border-top-width: 1.7em;
     margin: 0;
     padding: 0;
@@ -196,4 +200,140 @@ text {
 .input:focus {
     border-top-width: 0.2em;
     background-color: rgba(210, 178, 122, .8);
+}
+
+.volver {
+    padding: 0.9em 1.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    color: transparent;
+    border: 3px solid rgba(210, 178, 122, .8);
+    font-size: 14px;
+    font-family: inherit;
+    background: transparent;
+    margin-top: 5px;
+    margin-left: 5px;
+    position:absolute;
+    top:0;
+    left:0
+}
+
+.volver::before {
+    content: "Volver";
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: #363636;*/
+    /*color: rgba(210, 178, 122, .8);*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*transition: all 0.5s;*/
+}
+
+.volver:hover::before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+.volver::after {
+    content: "Volver";
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: -100%;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: rgba(210, 178, 122, .8);*/
+    /*color: #363636;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*transition: all 0.5s;*/
+    /*transform: scale(0) rotateY(0deg);*/
+    /*opacity: 0;*/
+}
+
+.volver:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+}
+
+/*#listo {*/
+/*    padding: 0.9em 1.8em;*/
+/*    text-transform: uppercase;*/
+/*    text-decoration: none;*/
+/*    letter-spacing: 4px;*/
+/*    color: transparent;*/
+/*    border: 3px solid rgba(210, 178, 122, .8);*/
+/*    font-size: 14px;*/
+/*    font-family: inherit;*/
+/*    background: transparent;*/
+/*    margin-bottom: 5px;*/
+/*    text-align: center;*/
+/*    position:relative;*/
+/*    bottom:0;*/
+/*}*/
+
+#listo::before {
+    content: "Si, estoy listo!";
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: #363636;*/
+    /*color: rgba(210, 178, 122, .8);*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*transition: all 0.5s;*/
+}
+
+#listo:hover::before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+#listo::after {
+    content:"Si, estoy listo!";
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: -100%;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*background-color: rgba(210, 178, 122, .8);*/
+    /*color: #363636;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*transition: all 0.5s;*/
+    /*transform: scale(0) rotateY(0deg);*/
+    /*opacity: 0;*/
+}
+
+#listo:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+}
+
+.comojugar{
+    font-size: x-large;
+    background-color: rgba(210, 178, 122, .5);
+    border-style: inset hidden outset hidden;
+    border-color: rgba(210, 178, 122, .8);
+    border-radius: 5px;
+    border-width: 6px;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+#comoju{
+    color: white;
 }
