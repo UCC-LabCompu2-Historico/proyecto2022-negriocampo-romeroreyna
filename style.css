@@ -1,7 +1,7 @@
 
 body {
     text-align: center;
-    background: url("resources/wallpaper.jpg");
+    background-image: url("resources/wallpaper.jpg");
     /*background-color: #D2B27ACC;*/
     background-size: cover;
     font-family: 'MedievalSharp', cursive;
@@ -190,10 +190,10 @@ button::after {
 
 /* From uiverse.io by @Alaner-xs */
 .input {
-    background-color: #D2B27ACC;
-    border: 1ex solid none;
+    background-color: #f5f5dc;
+    border: 1ex solid;
     border-top-width: 1.7em;
-    margin: 0;
+    margin-bottom: 2%;
     padding: 0;
     color: #D2B27ACC;
     word-wrap: break-word;
@@ -204,7 +204,7 @@ button::after {
     transition: all 1s;
     max-width: 190px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'MedievalSharp', cursive, monospace;
 }
 
 .input:hover {
@@ -214,7 +214,7 @@ button::after {
 
 .input:focus {
     border-top-width: 0.2em;
-    background-color: #f1e8e8;
+    background-color: #f5f5dc;
 }
 
 .volver {
@@ -371,13 +371,6 @@ button::after {
 
 #comoju {
     color: white;
-}
-
-#arquero {
-    width: 200px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 /*#text{*/
