@@ -366,8 +366,8 @@ button::after {
     border-color: rgba(210, 178, 122, .8);
     border-radius: 0.3125em;
     border-width: 0.375em;
-    margin-left: 18em;
-    margin-right: 18em;
+    margin-left: 9rem;
+    margin-right: 9rem;
 }
 
 #comoju {
