@@ -414,8 +414,6 @@ canvas {
 #jugardenuevo{
     position: relative;
     margin-top: 0.625em;
-    bottom: 1%;
-    right: 15%;
 }
 
 #jugardenuevo::before {
