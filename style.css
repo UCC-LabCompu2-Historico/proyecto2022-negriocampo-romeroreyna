@@ -360,7 +360,7 @@ button::after {
 }
 
 .info {
-    font-size: x-large;
+    font-size: 1.5rem;
     background-color: rgba(210, 178, 122, .5);
     border-style: inset hidden outset hidden;
     border-color: rgba(210, 178, 122, .8);
