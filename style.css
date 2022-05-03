@@ -412,7 +412,7 @@ canvas {
 }
 
 #jugardenuevo{
-    position: absolute;
+    position: relative;
     margin-top: 0.625em;
     bottom: 1%;
     right: 15%;
