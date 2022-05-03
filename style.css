@@ -42,10 +42,7 @@ body {
 }
 
 .exp {
-    margin-top: 6.25em;
-    margin-right: 9.375em;
-    margin-left: 9.375em;
-    font-size: large;
+    margin: 6.25em 9.375em 9.375em 9.375em;
 }
 
 /*text {*/
@@ -410,12 +407,13 @@ canvas {
     margin-top: 0.625em;
     border: 1px solid black;
     background-color: white;
-    width: 75em;
-    height: 31.25em;
+    width: 75rem;
+    height: 31.25rem;
 }
 
 #jugardenuevo{
     position: absolute;
+    margin-top: 0.625em;
     bottom: 1%;
     right: 15%;
 }
