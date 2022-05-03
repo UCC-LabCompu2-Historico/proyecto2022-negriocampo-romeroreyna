@@ -413,3 +413,29 @@ canvas {
     width: 75em;
     height: 31.25em;
 }
+
+#jugardenuevo{
+    position: absolute;
+    bottom: 1%;
+    right: 15%;
+}
+
+#jugardenuevo::before {
+    content: "Jugar de nuevo!";
+}
+
+#jugardenuevo::after {
+    content: "Jugar de nuevo!";
+}
+
+#jugardenuevo:hover::before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+#jugardenuevo:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+}
