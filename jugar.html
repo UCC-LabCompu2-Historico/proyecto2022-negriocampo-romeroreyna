@@ -15,14 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="resources/arcoyflecha.jpg">
     <script src="botones-js/volver.js"></script>
-    <scrpit type="text/javascript" src="funciones.js"></scrpit>
+    <script src="funciones.js"></script>
 
 </head>
 
-<body onload="cargarLocalStorage()">
+<body>
 <div>
     <header class="info">
-        <h1>¡A PRACTICAR!</h1>
+        <h1 id="practicar"></h1>
     </header>
 </div>
 
@@ -32,17 +32,24 @@
     <p>Ingrese los datos de su tiro:</p>
     <p>
         <label for="angulo"></label>
-        <input type="text" name="angulo" placeholder="Ingrese el angulo" class="datos" id="angulo">
+        <input type="number" name="angulo" placeholder="Ingrese el angulo" class="datos" id="angulo">
         <label for="velocidad"></label>
-        <input type="text" name="velocidad" placeholder="Ingrese la velocidad" class="datos" id="velocidad">
+        <input type="number" name="velocidad" placeholder="Ingrese la velocidad" class="datos" id="velocidad">
+        <label for="unidad"></label>
+        <select name="unidades" id="unidad">
+            <option value="ms">m/s</option>
+            <option value="km">km/h</option>
+        </select>
     </p>
-    <button type="submit" id="play"><span></span>¡Tirar!</button>
+    <button type="submit" id="play" onclick="tiro()"><span></span>¡Tirar!</button>
 </div>
 <div>
-    <canvas id="canvastiro"></canvas>
+    <canvas id="canvastiro">
+        CANVAS NOT SUPPORTED IN THIS BROWSER!
+    </canvas>
 </div>
 <div>
-    <button id="jugardenuevo"><span></span>Tirar de nuevo!</button>
+    <button id="jugardenuevo"><span></span>¡Tirar de nuevo!</button>
 </div>
 </body>
 </html>
