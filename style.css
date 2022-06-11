@@ -453,10 +453,8 @@ button::after {
     opacity: 1;
 }
 
-canvas {
-    margin-top: 0.625em;
-    border: 1px solid black;
+#canvas1 {
+    /*background: url("Imagenes/fondoc.png"), linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));*/
     background-color: black;
-    width: 75rem;
-    height: 25rem;
+
 }

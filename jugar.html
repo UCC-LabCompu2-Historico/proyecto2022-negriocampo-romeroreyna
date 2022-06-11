@@ -41,15 +41,18 @@
             <option value="km">km/h</option>
         </select>
     </p>
-    <button type="submit" id="play" onclick="tiro()"><span></span>¡Tirar!</button>
+    <button type="submit" id="play" onclick="calculo()"><span></span>¡Tirar!</button>
 </div>
 <div>
-    <canvas id="canvastiro">
-        CANVAS NOT SUPPORTED IN THIS BROWSER!
+    <canvas id="canvas1" width="1265px" height="445px">
+        Tu navegador no soporta el tag de HTML5 canvas.
     </canvas>
+<!--    <canvas id="canvas2" width="1265px" height="445px">-->
+<!--        Tu navegador no soporta el tag de HTML5 canvas.-->
+<!--    </canvas>-->
 </div>
 <div>
-    <button id="jugardenuevo"><span></span>¡Tirar de nuevo!</button>
+    <button id="jugardenuevo" onclick="borrar()"><span></span>¡Tirar de nuevo!</button>
 </div>
 </body>
 </html>
