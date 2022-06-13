@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body onload="ejes()">
 <div>
     <header class="info">
         <h1 id="practicar"></h1>
@@ -35,16 +35,17 @@
         <input type="number" name="angulo" placeholder="Ingrese el angulo" class="datos" id="angulo">
         <label for="velocidad"></label>
         <input type="number" name="velocidad" placeholder="Ingrese la velocidad" class="datos" id="velocidad">
-        <label for="unidad"></label>
-        <select name="unidades" id="unidad">
-            <option value="ms">m/s</option>
-            <option value="km">km/h</option>
-        </select>
     </p>
-    <button type="submit" id="play" onclick="calculo()"><span></span>¡Tirar!</button>
+    <button type="submit" id="play" onclick="resolver(velocidad.value,angulo.value)"><span></span>¡Tirar!</button>
 </div>
 <div>
-    <canvas id="canvas1" width="1265px" height="445px">
+    <p>La altura maxima es:</p>
+    <output name="altmax" id="resultadoalt" for="formula ">510.204081632653</output>
+    <p>El alcance maximo es:</p>
+    <output name="alcmax" id="resultadoalc" for="formula">1.2496395909666869e-13</output>
+</div>
+<div>
+    <canvas id="canvas1" width="1000px" height="500px">
         Tu navegador no soporta el tag de HTML5 canvas.
     </canvas>
 <!--    <canvas id="canvas2" width="1265px" height="445px">-->
@@ -52,7 +53,7 @@
 <!--    </canvas>-->
 </div>
 <div>
-    <button id="jugardenuevo" onclick="borrar()"><span></span>¡Tirar de nuevo!</button>
+    <button id="jugardenuevo" onclick="limpiar()"><span></span>¡Tirar de nuevo!</button>
 </div>
 </body>
 </html>

@@ -1,163 +1,193 @@
- // /**
- //  * Descripción
- //  * @method Nombre de la función
- //  * @param Parametro A
- //  * @param Parametro B
- //  * @return Valor que retorna
- //  * */
- //
- // function checkang(){
- //    if(document.getElementById("angulo").value<0){
- //        alert('Angulo incorrecto. Recuerde que el angulo debe ser mayor a 0° para que el tiro sea valido!');
- //        document.getElementById('angulo').value = "";
- //    }else if (document.getElementById("angulo").value>90){
- //        alert('Angulo incorrecto. Recuerde que el angulo debe ser menor a 90° para que el tiro sea valido!');
- //        document.getElementById('angulo').value = "";
- //    }
- // }
- //
- // function checkvel(){
- //    let ms;
- //     if(document.getElementById("unidad").value === "ms"){
- //         ms = true;
- //     }else if (document.getElementById("unidad").value === "km"){
- //         ms = false;
- //     }
- //     return ms;
- // }
- //
- // function dibujo() {
- //     var canvas = document.getElementById("canvastiro");
- //     var ctx = canvas.getContext("2d");
- //     var v=document.getElementById('velocidad').value;
- //     var x=0;
- //     var a = document.getElementById('angulo').value;
- //     var g = 9.8;
- //     var AM, ALM;
- //
- //     if(!checkvel){
- //         v = (document.getElementById("velocidad").value)/3.6;
- //     }
- //
- //     AM = (Math.pow(v,2)*Math.sqrt(sin(a),2))/g;
- //     ALM = (Math.pow(v,2)*sin(2*a))/g;
- //
- //
- //
- // }
- //
- // function tiro(){
- //    checkang();
- //    checkvel();
- //    dibujo();
- // }
+/**
+ * Calculo de alcance y distancia maxima en un tiro oblicuo.
+ * @method resolver
+ * @param {number} velinicial - valor de la velocidad con la que empieza el cuerpo
+ * @param {number} angulo - angulo con el que se realiza el tiro
+ * @return
+ */
+function resolver(velinicial, angulo){
+    if (document.getElementById('velocidad').value == "") {
+        alert("Ingrese una velocidad valida!");
+        document.getElementById('velocidad').value = "";
+        return;
+    }
+    if (document.getElementById('angulo').value == "") {
+        alert("Ingrese un angulo valido!");
+        document.getElementById('angulo').value = "";
+        return;
+    }
+    if (document.getElementById('velocidad').value <= 0) {
+        alert("La velocidad no puede ser negativa o igual a cero!");
+        document.getElementById('velocidad').value = "";
+        return;
+    }
+    if ((document.getElementById('angulo').value <= 0) || (document.getElementById('angulo').value >= 91)) {
+        alert("El ángulo no pueden ser negativo, igual a cero o mayor a 90!");
+        document.getElementById('angulo').value = "";
+        return;
+    }
 
- /**
-  * Calcula los valores de x e y para luego realizar la simulacion.
-  * @method simulacion
-  * @param {number} velocidad - El valor de la velocidad de la funcion anterior.
-  * @param {number} angulo - El valor del angulo de la funcion anterior.
-  * @param {number} tiempo - El valor del tiempo de la funcion anterior.
-  * @return x,y
-  */
+    var alcance, altura;
 
- var t = 0;
+    if(isNaN(velinicial) || isNaN(angulo)) {
+        document.getElementById("velociad").value="";
+        document.getElementById("angulo").value="";
+        alert("Los datos deben ser numericos.");
+        return;
+    }
+    Number(velinicial);
+    Number(angulo);
 
- function simulacion(velocidad, angulo, tiempo) {
+    document.getElementsByName("altmax")[0].innerHTML = (Math.pow(velinicial,2)*Math.pow(Math.sin((angulo*Math.PI)/180), 2))/(2*9.8);
+    document.getElementsByName("alcmax")[0].innerHTML = Math.pow(velinicial, 2)*Math.sin(2*(angulo*Math.PI)/180)/9.8;
 
-     var canvas1 = document.getElementById("canvas1");
-     var ctx = canvas1.getContext("2d");
-     // var canvas2 = document.getElementById("canvas2");
-     // var flecha = canvas2.getContext("2d");
-     var x = velocidad * Math.cos(angulo);
-     var y = velocidad * Math.sin(angulo);
+    alcance=Number(document.getElementsByName("alcmax")[0].value);
+    altura=Number(document.getElementsByName("altmax")[0].value);
 
-     ctx.beginPath();
-     ctx.fillStyle = "#f5f5f5";
-     ctx.arc((145 + (x * t)), 425 - (y * t - 0.5 * 9.8 * (Math.pow(t, 2))), 5, 0, 2 * Math.PI);
-     ctx.closePath();
-     ctx.fill();
-
-     // canvas2.width = canvas2.width;
-     //
-     // var img = new Image();
-     // img.src = "resources/flecha.png";
-     // flecha.beginPath();
-     // flecha.drawImage(img, (125 + (x * t)), 400 - (y * t - 0.5 * 9.8 * (Math.pow(t, 2))))
-     // flecha.closePath();
-
-     t = t + 0.05;
-
-     if (t < tiempo) {
-         setTimeout(function () {
-             simulacion(velocidad, angulo, tiempo);}, 50);
-     } else {
-         t = 0;
-     }
- }
-
- /**
-  * Verifica los valores ingresados y calcula la altura maxima, alcance maximo y tiempo de vuelo. Ademas cambia unidades.
-  * @method calculo
-  * @return altura,alcance,tiempo
-  */
-
- function calculo() {
-     if (document.getElementById('velocidad').value == "") {
-         alert("Ingrese una velocidad valida!");
-         document.getElementById('velocidad').value = "";
-         return;
-     }
-     if (document.getElementById('angulo').value == "") {
-         alert("Ingrese un angulo valido!");
-         document.getElementById('angulo').value = "";
-         return;
-     }
-     if (document.getElementById('velocidad').value <= 0) {
-         alert("La velocidad no puede ser negativa o igual a cero!");
-         document.getElementById('velocidad').value = "";
-         return;
-     }
-     if ((document.getElementById('angulo').value <= 0) || (document.getElementById('angulo').value >= 91)) {
-         alert("El ángulo no pueden ser negativo, igual a cero o mayor a 90!");
-         document.getElementById('angulo').value = "";
-         return;
-     }
-
-     var velocidad = document.getElementById('velocidad').value;
-     var angulo = document.getElementById('angulo').value;
-
-     if (document.getElementById('unidad').value == "km") {
-         velocidad = velocidad / 3.6;
-     }
-
-     // if (document.getElementById('unidadangulo').value == "Grad") {
-     //     angulo = angulo * Math.PI / 180;
-     // }
-
-     var altura = (((Math.pow(velocidad, 2)) * (Math.pow(Math.sin(angulo), 2))) / (2 * 9.8)).toFixed(2);
-     // document.getElementById("altura").value = altura;
+    alcance
+    graficar(alcance, altura);
+}
 
 
-     var alcance = (((Math.pow(velocidad, 2)) * (Math.sin((angulo) * 2))) / (9.8)).toFixed(2);
-     // document.getElementById("alcance").value = alcance;
+/**
+ * Creacion de los ejes X e Y.
+ * @method ejes
+ * @return
+ */
+function ejes(){
+    var canvas=document.getElementById("canvas1");
+    var ctx=canvas.getContext("2d");
+    var altMax = canvas.height;
+    var anchoMax = canvas.width;
+    var margX = 50;
+    var margY = 30;
+    var valorX=20;
+    var valorY=20;
 
-     var tiempo = (((2 * velocidad) * (Math.sin(angulo))) / (9.8)).toFixed(2);
-     // document.getElementById("tiempo").value = tiempo;
+    //Eje X
+    ctx.beginPath();
+    ctx.moveTo(margX , altMax - margY);
+    ctx.lineTo(anchoMax -margX,altMax - margY);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
 
-     simulacion(velocidad, angulo, tiempo);
+    //Eje Y
+    ctx.beginPath();
+    ctx.moveTo(margX , altMax - margY);
+    ctx.lineTo(margX,margY);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
 
- }
+    //Flecha Eje X
+    ctx.beginPath();
+    ctx.moveTo(anchoMax - margX, altMax - margY);
+    ctx.lineTo(anchoMax - margX - 15, altMax - margY - 5);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
 
- /**
-  * Borra el canvas.
-  * @method borrar
-  * @return canvas1,canvas2
-  */
+    ctx.beginPath();
+    ctx.moveTo(anchoMax - margX, altMax - margY);
+    ctx.lineTo(anchoMax - margX - 15, altMax - margY + 5);
+    ctx.strokeStyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
 
- function borrar() {
-     var canvas1 = document.getElementById("canvas1");
-     var canvas2 = document.getElementById("canvas2");
-     canvas1.width = canvas1.width;
-     canvas2.width = canvas2.width;
- }
+    //Flecha Eje Y
+    ctx.beginPath();
+    ctx.moveTo(margX , margY);
+    ctx.lineTo(margX + 5 , margY + 15);
+    ctx.stroke();
+    ctx.closePath();
+
+
+    ctx.beginPath();
+    ctx.moveTo(margX , margY);
+    ctx.lineTo(margX -5 , margY + 15);
+    ctx.strokestyle = "#000000";
+    ctx.stroke();
+    ctx.closePath();
+
+    //divisiones X
+    ctx.beginPath();
+    for(i = margX + 40 ; i < anchoMax - margY - 40; i += 40){
+        ctx.moveTo(i , altMax + 7 - margY );
+        ctx.lineTo(i , altMax - margY - 7 );
+        ctx.strokeStyle = "#000000";
+        ctx.stroke();
+    }
+    ctx.closePath();
+
+    //numeros X
+    ctx.beginPath();
+    for(i = margX + 40 ; i < anchoMax - margY - 40; i += 40){
+        ctx.font = "15px Arial";
+        ctx.fillText(valorX , i , altMax  - 10);
+        valorX+=20;
+    }
+    ctx.closePath();
+
+    //divisiones Y
+    ctx.beginPath();
+    for(var i = altMax - margY - 40; i > margY; i -= 40){
+        ctx.moveTo(margX - 7 , i);
+        ctx.lineTo(margX + 7 , i);
+        ctx.strokeStyle = "#000000";
+        ctx.stroke();
+    }
+    ctx.closePath();
+
+    //Numeros Y
+    ctx.beginPath();
+    for(var i = altMax - margY - 40; i > margY; i -= 40){
+        ctx.font = "15px Arial";
+        ctx.fillText(valorY , margX - 33 , i);
+        valorY+=20;
+    }
+    ctx.closePath();
+
+
+}
+
+/**
+ * Grafico del recorrido del tiro.
+ * @method graficar
+ * @param {number} alcance - valor de la distancia maxima del tiro
+ * @param {number} altura - altura maxima del tiro
+ * @return
+ */
+function graficar(alcance , altura) {
+    var canvas = document.getElementById("canvas1");
+    var ctx = canvas.getContext("2d");
+    var altMax = canvas.height;
+    var anchoMax = canvas.width;
+    var margX = 50;
+    var margY = 30;
+    alcance *= 2;
+    altura *= 2;
+    console.log(alcance, altura);
+
+    ctx.beginPath();
+    ctx.moveTo(margX, altMax - margY);
+    ctx.quadraticCurveTo((alcance / 2) + margX, altMax - margY - altura * 2, alcance + margX, altMax - margY);
+    ctx.strokeStyle = "#2a54fd";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    ctx.closePath();
+}
+
+/**
+ * Borra el contenido del grafico para volver a tenerlo en blanco
+ * @method limpiar
+ * @return
+ */
+function limpiar(){
+    var canvas = document.getElementById("canvas1");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width=canvas.width;
+    ejes();
+}
+

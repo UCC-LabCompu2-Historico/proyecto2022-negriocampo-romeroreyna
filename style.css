@@ -428,33 +428,33 @@ button::after {
     opacity: 1;
 }
 
-#oknombre{
-    position: relative;
-    margin-top: 0.625em;
-}
+/*#oknombre{*/
+/*    position: relative;*/
+/*    margin-top: 0.625em;*/
+/*}*/
 
-#oknombre::before {
-    content: "Listo!";
-}
+/*#oknombre::before {*/
+/*    content: "Listo!";*/
+/*}*/
 
-#oknombre::after {
-    content: "Listo!";
-}
+/*#oknombre::after {*/
+/*    content: "Listo!";*/
+/*}*/
 
-#oknombre:hover::before {
-    left: 100%;
-    transform: scale(0) rotateY(360deg);
-    opacity: 0;
-}
+/*#oknombre:hover::before {*/
+/*    left: 100%;*/
+/*    transform: scale(0) rotateY(360deg);*/
+/*    opacity: 0;*/
+/*}*/
 
-#oknombre:hover::after {
-    left: 0;
-    transform: scale(1) rotateY(360deg);
-    opacity: 1;
-}
+/*#oknombre:hover::after {*/
+/*    left: 0;*/
+/*    transform: scale(1) rotateY(360deg);*/
+/*    opacity: 1;*/
+/*}*/
 
 #canvas1 {
-    /*background: url("Imagenes/fondoc.png"), linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1));*/
-    background-color: black;
-
+    border-style: solid;
+    border-color: black;
+    background-color: transparent;
 }
