@@ -6,12 +6,12 @@
  * @return
  */
 function resolver(velinicial, angulo){
-    if (document.getElementById('velocidad').value == "") {
+    if (document.getElementById('velocidad').value === "") {
         alert("Ingrese una velocidad valida!");
         document.getElementById('velocidad').value = "";
         return;
     }
-    if (document.getElementById('angulo').value == "") {
+    if (document.getElementById('angulo').value === "") {
         alert("Ingrese un angulo valido!");
         document.getElementById('angulo').value = "";
         return;
@@ -27,7 +27,7 @@ function resolver(velinicial, angulo){
         return;
     }
 
-    var alcance, altura;
+    let alcance, altura;
 
     if(isNaN(velinicial) || isNaN(angulo)) {
         document.getElementById("velociad").value="";
@@ -35,16 +35,16 @@ function resolver(velinicial, angulo){
         alert("Los datos deben ser numericos.");
         return;
     }
+    
     Number(velinicial);
     Number(angulo);
 
-    document.getElementsByName("altmax")[0].innerHTML = (Math.pow(velinicial,2)*Math.pow(Math.sin((angulo*Math.PI)/180), 2))/(2*9.8);
-    document.getElementsByName("alcmax")[0].innerHTML = Math.pow(velinicial, 2)*Math.sin(2*(angulo*Math.PI)/180)/9.8;
+    document.getElementsByName("alturamaxima")[0].innerHTML = (Math.pow(velinicial,2)*Math.pow(Math.sin((angulo*Math.PI)/180), 2))/(2*9.8);
+    document.getElementsByName("alcancemaximo")[0].innerHTML = Math.pow(velinicial, 2)*Math.sin(2*(angulo*Math.PI)/180)/9.8;
 
-    alcance=Number(document.getElementsByName("alcmax")[0].value);
-    altura=Number(document.getElementsByName("altmax")[0].value);
+    alcance=Number(document.getElementsByName("alcancemaximo")[0].value);
+    altura=Number(document.getElementsByName("alturamaxima")[0].value);
 
-    alcance
     graficar(alcance, altura);
 }
 
@@ -54,15 +54,17 @@ function resolver(velinicial, angulo){
  * @method ejes
  * @return
  */
+
 function ejes(){
-    var canvas=document.getElementById("canvas1");
-    var ctx=canvas.getContext("2d");
-    var altMax = canvas.height;
-    var anchoMax = canvas.width;
-    var margX = 50;
-    var margY = 30;
-    var valorX=20;
-    var valorY=20;
+    let canvas=document.getElementById("canvas1");
+    let ctx=canvas.getContext("2d");
+    let altMax = canvas.height;
+    let anchoMax = canvas.width;
+    let margX = 50;
+    let margY = 30;
+    let valorX=20;
+    let valorY=20;
+    let i;
 
     //Eje X
     ctx.beginPath();
@@ -131,7 +133,7 @@ function ejes(){
 
     //divisiones Y
     ctx.beginPath();
-    for(var i = altMax - margY - 40; i > margY; i -= 40){
+    for( i = altMax - margY - 40; i > margY; i -= 40){
         ctx.moveTo(margX - 7 , i);
         ctx.lineTo(margX + 7 , i);
         ctx.strokeStyle = "#000000";
@@ -141,7 +143,7 @@ function ejes(){
 
     //Numeros Y
     ctx.beginPath();
-    for(var i = altMax - margY - 40; i > margY; i -= 40){
+    for( i = altMax - margY - 40; i > margY; i -= 40){
         ctx.font = "15px Arial";
         ctx.fillText(valorY , margX - 33 , i);
         valorY+=20;
@@ -152,19 +154,19 @@ function ejes(){
 }
 
 /**
- * Grafico del recorrido del tiro.
+ * Grafico.
  * @method graficar
- * @param {number} alcance - valor de la distancia maxima del tiro
- * @param {number} altura - altura maxima del tiro
+ * @param {number} alcance - distancia maxima del tiro en el eje X
+ * @param {number} altura - distancia maxima del tiro en el eje Y
  * @return
  */
 function graficar(alcance , altura) {
-    var canvas = document.getElementById("canvas1");
-    var ctx = canvas.getContext("2d");
-    var altMax = canvas.height;
-    var anchoMax = canvas.width;
-    var margX = 50;
-    var margY = 30;
+    let canvas = document.getElementById("canvas1");
+    let ctx = canvas.getContext("2d");
+    let altMax = canvas.height;
+    // let anchoMax = canvas.width;
+    let margX = 50;
+    let margY = 30;
     alcance *= 2;
     altura *= 2;
     console.log(alcance, altura);
@@ -179,15 +181,19 @@ function graficar(alcance , altura) {
 }
 
 /**
- * Borra el contenido del grafico para volver a tenerlo en blanco
+ * Borra el contenido del grafico y de los input
  * @method limpiar
  * @return
  */
 function limpiar(){
-    var canvas = document.getElementById("canvas1");
-    var ctx = canvas.getContext("2d");
+    let canvas1 = document.getElementById("canvas1");
+    let ctx = canvas1.getContext("2d");
 
-    canvas.width=canvas.width;
+    canvas1.width = canvas1.width;
+
     ejes();
+
+    document.getElementById('angulo').value = "";
+    document.getElementById('velocidad').value = "";
 }
 
