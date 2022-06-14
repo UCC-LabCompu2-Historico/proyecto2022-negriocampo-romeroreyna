@@ -66,6 +66,14 @@ function ejes(){
     let valorY=20;
     let i;
 
+    let img = new Image();
+    img.src = "resources/archer.png";
+    img.onload = function(){
+        ctx.drawImage(img, 5, 390, 125, 125);
+    }
+
+
+
     //Eje X
     ctx.beginPath();
     ctx.moveTo(margX , altMax - margY);
@@ -195,5 +203,8 @@ function limpiar(){
 
     document.getElementById('angulo').value = "";
     document.getElementById('velocidad').value = "";
+
+    document.getElementsByName("alturamaxima")[0].value = "";
+    document.getElementsByName("alcancemaximo")[0].value = "";
 }
 

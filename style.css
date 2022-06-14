@@ -456,5 +456,6 @@ button::after {
 #canvas1 {
     border-style: solid;
     border-color: black;
-    background-color: white;
+    background-image: url("resources/grassfield.jpg");
+    
 }
