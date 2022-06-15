@@ -30,8 +30,8 @@ function resolver(velinicial, angulo){
     let alcance, altura;
 
     if(isNaN(velinicial) || isNaN(angulo)) {
-        document.getElementById("velociad").value="";
-        document.getElementById("angulo").value="";
+        document.getElementById('velocidad').value="";
+        document.getElementById('angulo').value="";
         alert("Los datos deben ser numericos.");
         return;
     }
