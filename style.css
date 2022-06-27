@@ -457,5 +457,16 @@ button::after {
     border-style: solid;
     border-color: black;
     background-image: url("resources/grassfield.jpg");
-    
+}
+
+.canvases {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+}
+
+.canvases canvas {
+    position: absolute;
+    top: 0;
+    left: 0.1;
 }

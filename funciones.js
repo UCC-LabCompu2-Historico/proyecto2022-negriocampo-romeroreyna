@@ -42,11 +42,16 @@ function resolver(velinicial, angulo){
     document.getElementsByName("alturamaxima")[0].innerHTML = (Math.pow(velinicial,2)*Math.pow(Math.sin((angulo*Math.PI)/180), 2))/(2*9.8);
     document.getElementsByName("alcancemaximo")[0].innerHTML = Math.pow(velinicial, 2)*Math.sin(2*(angulo*Math.PI)/180)/9.8;
 
-    alcance=Number(document.getElementsByName("alcancemaximo")[0].value);
-    altura=Number(document.getElementsByName("alturamaxima")[0].value);
+    //alcance=Number(document.getElementsByName("alcancemaximo")[0].value);
+    //altura=Number(document.getElementsByName("alturamaxima")[0].value);
 
-    graficar(alcance, altura);
+    let tiempo = (((2 * velinicial) * (Math.sin(angulo))) / (9.8)).toFixed(2);
+    document.getElementById("tiempo").value = tiempo;
+
+    // graficar(alcance, altura, tiempo, angulo, velinicial);
+    animacion(velinicial, angulo, tiempo);
 }
+
 
 
 /**
@@ -69,7 +74,7 @@ function ejes(){
     let img = new Image();
     img.src = "resources/archer.png";
     img.onload = function(){
-        ctx.drawImage(img, 5, 390, 125, 125);
+        ctx.drawImage(img, 5, 350, 125, 125);
     }
 
 
@@ -161,32 +166,105 @@ function ejes(){
 
 }
 
-/**
- * Grafico.
- * @method graficar
- * @param {number} alcance - distancia maxima del tiro en el eje X
- * @param {number} altura - distancia maxima del tiro en el eje Y
- * @return
- */
-function graficar(alcance , altura) {
-    let canvas = document.getElementById("canvas1");
-    let ctx = canvas.getContext("2d");
-    let altMax = canvas.height;
-    // let anchoMax = canvas.width;
-    let margX = 50;
-    let margY = 30;
-    alcance *= 2;
-    altura *= 2;
-    console.log(alcance, altura);
+let t = 0;
 
-    ctx.beginPath();
-    ctx.moveTo(margX, altMax - margY);
-    ctx.quadraticCurveTo((alcance / 2) + margX, altMax - margY - altura * 2, alcance + margX, altMax - margY);
-    ctx.strokeStyle = "#2a54fd";
-    ctx.lineWidth = 4;
-    ctx.stroke();
-    ctx.closePath();
-}
+// /**
+//  * Grafico.
+//  * @method graficar
+//  * @param {number} alcance - distancia maxima del tiro en el eje X
+//  * @param {number} altura - distancia maxima del tiro en el eje Y
+//  * @param {number} tiempo -
+//  * @param {number} angulo -
+//  * @param {number} velocidad -
+//  * @return
+//  */
+// function graficar(alcance , altura, tiempo, angulo, velocidad) {
+//     let canvas = document.getElementById("canvas1");
+//     let ctx = canvas.getContext("2d");
+//     let altMax = canvas.height;
+//     // let anchoMax = canvas.width;
+//     let margX = 50;
+//     let margY = 30;
+//     alcance *= 2;
+//     altura *= 2;
+//     console.log(alcance, altura);
+//
+//     ctx.beginPath();
+//     ctx.moveTo(margX, altMax - margY);
+//     ctx.quadraticCurveTo((alcance / 2) + margX, altMax - margY - altura * 2, alcance + margX, altMax - margY);
+//     ctx.strokeStyle = "#2a54fd";
+//     ctx.lineWidth = 4;
+//     ctx.stroke();
+//     ctx.closePath();
+
+    // let canvas2 = document.getElementById("canvas2");
+    // let flecha = canvas2.getContext("2d");
+    // let x = velocidad * Math.cos(angulo);
+    // let y = velocidad * Math.sin(angulo);
+    //
+    // canvas2.width = canvas2.width;
+    //
+    // var img = new Image();
+    // img.src = "resources/flecha.png";
+    // flecha.beginPath();
+    // flecha.drawImage(img, (125 + (x * t)), 400 - (y * t - 0.5 * 9.8 * (Math.pow(t, 2))))
+    // flecha.closePath();
+    //
+    // t = t + 0.05;
+    //
+    // if (t < tiempo) {
+    //     setTimeout(function() {
+    //         graficar(alcance, altura, tiempo, angulo, velocidad);
+    //     }, 50);
+    // } else {
+    //     t = 0;
+    // }
+
+// }
+
+ /**
+  * Animacion.
+  * @method Animar el grafico
+  * @param {number} velocidad - velocidad del tiro
+  * @param {number} angulo - angulo del tiro
+  * @param {number} tiempo - tiempo del tiro
+  * @return
+ */
+
+
+function animacion (velocidad, angulo, tiempo){
+
+     var canvas1 = document.getElementById("canvas1");
+     var ctx = canvas1.getContext("2d");
+     var canvas2 = document.getElementById("canvas2");
+     var flecha = canvas2.getContext("2d");
+     var x = velocidad * Math.cos(angulo);
+     var y = velocidad * Math.sin(angulo);
+
+     ctx.beginPath();
+     ctx.fillStyle = "#314f91";
+     ctx.arc((50 + (x * t)), 420 - (y * t - 0.5 * 9.8 * (Math.pow(t, 2))), 5, 0, 2 * Math.PI);
+     ctx.closePath();
+     ctx.fill();
+
+     canvas2.width = canvas2.width;
+
+     var img = new Image();
+     img.src = "resources/flecha.png";
+     flecha.beginPath();
+     flecha.drawImage(img, (5 + (x * t)), 420 - (y * t - 0.5 * 9.8 * (Math.pow(t, 2))), 50, 50)
+     flecha.closePath();
+
+     t = t + 0.05;
+
+     if (t < tiempo) {
+         setTimeout(function () {
+             animacion(velocidad, angulo, tiempo);}, 50);
+     } else {
+         t = 0;
+     }
+
+ }
 
 /**
  * Borra el contenido del grafico y de los input
@@ -196,8 +274,11 @@ function graficar(alcance , altura) {
 function limpiar(){
     let canvas1 = document.getElementById("canvas1");
     let ctx = canvas1.getContext("2d");
+    let canvas2 = document.getElementById("canvas2");
+    let ctx2 = canvas1.getContext("2d");
 
     canvas1.width = canvas1.width;
+    canvas2.width = canvas2.width;
 
     ejes();
 
