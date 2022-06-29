@@ -27,7 +27,7 @@ function resolver(velinicial, angulo){
         return;
     }
 
-    let alcance, altura;
+    // let alcance, altura;
 
     if(isNaN(velinicial) || isNaN(angulo)) {
         document.getElementById('velocidad').value="";
@@ -35,17 +35,22 @@ function resolver(velinicial, angulo){
         alert("Los datos deben ser numericos.");
         return;
     }
-    
+
     Number(velinicial);
     Number(angulo);
 
-    document.getElementsByName("alturamaxima")[0].innerHTML = (Math.pow(velinicial,2)*Math.pow(Math.sin((angulo*Math.PI)/180), 2))/(2*9.8);
-    document.getElementsByName("alcancemaximo")[0].innerHTML = Math.pow(velinicial, 2)*Math.sin(2*(angulo*Math.PI)/180)/9.8;
+    angulo = (angulo * Math.PI)/180;
+
+    document.getElementsByName("alturamaxima")[0].innerHTML = (((Math.pow(velinicial, 2)) * (Math.pow(Math.sin(angulo), 2))) / (2 * 9.8)).toFixed(2);
+    // (Math.pow(velinicial,2)*Math.pow(Math.sin((angulo*Math.PI)/180), 2))/(2*9.8)
+    document.getElementsByName("alcancemaximo")[0].innerHTML = (((Math.pow(velinicial, 2)) * (Math.sin((angulo) * 2))) / (9.8)).toFixed(2);
+    // Math.pow(velinicial, 2)*Math.sin(2*(angulo*Math.PI)/180)/9.8;
 
     //alcance=Number(document.getElementsByName("alcancemaximo")[0].value);
     //altura=Number(document.getElementsByName("alturamaxima")[0].value);
 
     let tiempo = (((2 * velinicial) * (Math.sin(angulo))) / (9.8)).toFixed(2);
+
     document.getElementById("tiempo").value = tiempo;
 
     // graficar(alcance, altura, tiempo, angulo, velinicial);
@@ -139,7 +144,7 @@ function ejes(){
     ctx.beginPath();
     for(i = margX + 40 ; i < anchoMax - margY - 40; i += 40){
         ctx.font = "15px Arial";
-        ctx.fillText(valorX , i , altMax  - 10);
+        ctx.fillText(valorX*2 , i , altMax  - 10);
         valorX+=20;
     }
     ctx.closePath();
@@ -158,7 +163,7 @@ function ejes(){
     ctx.beginPath();
     for( i = altMax - margY - 40; i > margY; i -= 40){
         ctx.font = "15px Arial";
-        ctx.fillText(valorY , margX - 33 , i);
+        ctx.fillText(valorY*2 , margX - 33 , i);
         valorY+=20;
     }
     ctx.closePath();
