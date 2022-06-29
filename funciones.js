@@ -26,6 +26,11 @@ function resolver(velinicial, angulo){
         document.getElementById('angulo').value = "";
         return;
     }
+    if (document.getElementById('velocidad').value > 107){
+        alert("Ingrese un valor de velocidad menor o igual a 107! (La flecha sale fuera del area de dibujo)");
+        document.getElementById('velocidad').value = "";
+        return;
+    }
 
     // let alcance, altura;
 
