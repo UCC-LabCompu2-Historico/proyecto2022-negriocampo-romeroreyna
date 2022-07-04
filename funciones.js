@@ -244,12 +244,12 @@ let t = 0;
 
 function animacion (velocidad, angulo, tiempo){
 
-     var canvas1 = document.getElementById("canvas1");
-     var ctx = canvas1.getContext("2d");
-     var canvas2 = document.getElementById("canvas2");
-     var flecha = canvas2.getContext("2d");
-     var x = velocidad * Math.cos(angulo);
-     var y = velocidad * Math.sin(angulo);
+     let canvas1 = document.getElementById("canvas1");
+     let ctx = canvas1.getContext("2d");
+     let canvas2 = document.getElementById("canvas2");
+     let flecha = canvas2.getContext("2d");
+     let x = velocidad * Math.cos(angulo);
+     let y = velocidad * Math.sin(angulo);
 
      ctx.beginPath();
      ctx.fillStyle = "#314f91";
@@ -259,7 +259,7 @@ function animacion (velocidad, angulo, tiempo){
 
      canvas2.width = canvas2.width;
 
-     var img = new Image();
+     let img = new Image();
      img.src = "resources/flecha.png";
      flecha.beginPath();
      flecha.drawImage(img, (5 + (x * t)), 420 - (y * t - 0.5 * 9.8 * (Math.pow(t, 2))), 50, 50)
