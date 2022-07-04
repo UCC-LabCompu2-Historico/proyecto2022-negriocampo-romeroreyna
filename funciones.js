@@ -56,7 +56,7 @@ function resolver(velinicial, angulo){
 
     let tiempo = (((2 * velinicial) * (Math.sin(angulo))) / (9.8)).toFixed(2);
 
-    document.getElementById("tiempo").value = tiempo;
+    document.getElementsByName("tiempot")[0].innerHTML = tiempo;
 
     // graficar(alcance, altura, tiempo, angulo, velinicial);
     animacion(velinicial, angulo, tiempo);
