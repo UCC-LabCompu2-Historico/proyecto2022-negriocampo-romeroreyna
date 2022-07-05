@@ -297,5 +297,6 @@ function limpiar(){
 
     document.getElementsByName("alturamaxima")[0].value = "";
     document.getElementsByName("alcancemaximo")[0].value = "";
+    document.getElementsByName("tiempot")[0].value = "";
 }
 
